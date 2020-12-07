@@ -98,57 +98,57 @@ p=0.8
 model = EOQ_Model(demand=d, order=K, cost=c, holding=h, planned_shortage=False, shortage_cost=p)
 model.complete_calculations()
 
-# Planned Shortage Example
+# # Planned Shortage Example
 
-d=500
-K=100
-c=20
-h=2
-p=0.8
+# d=500
+# K=100
+# c=20
+# h=2
+# p=0.8
 
-model = EOQ_Model(demand=d, order=K, cost=c, holding=h, planned_shortage=True, shortage_cost=p)
-model.complete_calculations()
+# model = EOQ_Model(demand=d, order=K, cost=c, holding=h, planned_shortage=True, shortage_cost=p)
+# model.complete_calculations()
 
-# Sensivity Analysis
-# Increase K- Expect both Q and t to increase
+# # Sensivity Analysis
+# # Increase K- Expect both Q and t to increase
 
-d=500
-c=20
-h=2
-p=0.8
-K = [80, 100, 150, 200]
+# d=500
+# c=20
+# h=2
+# p=0.8
+# K = [80, 100, 150, 200]
 
-for k in K:
-    print("K Value: {}".format(k))
-    model = EOQ_Model(demand=d, order=k, cost=c, holding=h, planned_shortage=False, shortage_cost=p)
-    model.complete_calculations()
-    print('-----------------')
+# for k in K:
+#     print("K Value: {}".format(k))
+#     model = EOQ_Model(demand=d, order=k, cost=c, holding=h, planned_shortage=False, shortage_cost=p)
+#     model.complete_calculations()
+#     print('-----------------')
 
-# Increase h- Expect both Q and t to decrease
+# # Increase h- Expect both Q and t to decrease
 
-d=500
-K=100
-c=20
-p=0.8
-H = [2,4,6,8,10]
+# d=500
+# K=100
+# c=20
+# p=0.8
+# H = [2,4,6,8,10]
 
-for h in H:
-    print("h Value: {}".format(h))
-    model = EOQ_Model(demand=d, order=K, cost=c, holding=h, planned_shortage=False, shortage_cost=p)
-    model.complete_calculations()
-    print('-----------------')
+# for h in H:
+#     print("h Value: {}".format(h))
+#     model = EOQ_Model(demand=d, order=K, cost=c, holding=h, planned_shortage=False, shortage_cost=p)
+#     model.complete_calculations()
+#     print('-----------------')
 
-# Increase d- Expect Q to increase and t to decrease
+# # Increase d- Expect Q to increase and t to decrease
 
-D=[200,400,600,800,1000]
-K=100
-c=20
-p=0.8
-h=2
+# D=[200,400,600,800,1000]
+# K=100
+# c=20
+# p=0.8
+# h=2
 
 
-for d in D:
-    print("d Value: {}".format(d))
-    model = EOQ_Model(demand=d, order=K, cost=c, holding=h, planned_shortage=False, shortage_cost=p)
-    model.complete_calculations()
-    print('-----------------')
+# for d in D:
+#     print("d Value: {}".format(d))
+#     model = EOQ_Model(demand=d, order=K, cost=c, holding=h, planned_shortage=False, shortage_cost=p)
+#     model.complete_calculations()
+#     print('-----------------')

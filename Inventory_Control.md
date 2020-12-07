@@ -1,6 +1,8 @@
 For purposes of monitoring the effectiveness of inventory management it is helpful to look at
 the following ratios and indexes:
 
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+
 Overall Inventory Turnover Ratio =
 Cost of goods sold / Average total inventories at cost
 
@@ -21,4 +23,4 @@ Average finished goods inventory at Cost / Average cost of goods manufactured pe
 
 Out-of-stock Index = Number of times out of stock / Number of times requisitioned
 
-Spare Parts Index = Value of Spare Parts Inventory / Value of Capital Eeuipment
+Spare Parts Index = Value of Spare Parts Inventory / Value of Capital Equipment
