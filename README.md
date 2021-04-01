@@ -13,3 +13,92 @@ Imagine you own a toy shop, and you notice you are running out of big giraffe st
 ### Marketing Analysis
 You may be wondering, are my marketing efforts effective? How do I figure out if they are? You can determine how effective your marketing efforts are at helping to increase sales by using marketing analysis. You should start by comparing your marketing costs for this year with your total sales in stores and online. Then compare those figures to last year's marketing costs and total sales. You can also look at the use of coupons in stores and online, which will help you determine if those items are being marketed properly.
 
+# Mathematics Finance
+
+### Time of Money
+
+**Simple Interest**  
+
+```python
+ SimpleInterest(value)
+ ```  
+
+**Bank Discount**  
+
+```python
+ BankDiscount(value)
+ ```
+
+**Compound Interest**  
+
+```python
+CompoundInterest(value)
+```
+
+**Annuities**
+
+```python
+Annuities(value)
+```
+
+### Debt and Leasing
+
+**Credit** & **Loans**
+
+```python
+Credit(value)
+Loans(value)
+```
+
+**Mortgage Debt**
+```python
+Morgage(value)
+```
+**Leasing**
+```python
+```
+
+### Investment
+
+**Stocks**
+
+```python
+Stock(buy/sell)
+CommonStock(value)
+NewCommonStock(value)
+
+```
+**Bonds**
+```python
+
+```
+
+**Mutual Funds**
+```
+```
+
+**Options**
+```
+```
+**Cost of Capital and Ratio Analysis**
+```
+```
+
+### Return and Risk
+**Return and Risk**
+```python
+ERR(value)
+```
+Capital Asset Pricing
+```python
+```
+
+
+### Insurance
+
+**Life Annuaities**
+```python
+MortalityTable(value)
+```
+
+**Life Insurance**
