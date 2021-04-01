@@ -13,7 +13,7 @@ Imagine you own a toy shop, and you notice you are running out of big giraffe st
 ### Marketing Analysis
 You may be wondering, are my marketing efforts effective? How do I figure out if they are? You can determine how effective your marketing efforts are at helping to increase sales by using marketing analysis. You should start by comparing your marketing costs for this year with your total sales in stores and online. Then compare those figures to last year's marketing costs and total sales. You can also look at the use of coupons in stores and online, which will help you determine if those items are being marketed properly.
 
-# Mathematics Finance
+## Mathematics Finance
 
 ### Time of Money
 
