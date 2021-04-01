@@ -13,92 +13,49 @@ Imagine you own a toy shop, and you notice you are running out of big giraffe st
 ### Marketing Analysis
 You may be wondering, are my marketing efforts effective? How do I figure out if they are? You can determine how effective your marketing efforts are at helping to increase sales by using marketing analysis. You should start by comparing your marketing costs for this year with your total sales in stores and online. Then compare those figures to last year's marketing costs and total sales. You can also look at the use of coupons in stores and online, which will help you determine if those items are being marketed properly.
 
-## Mathematics Finance
+---
+## Quantitative Methods for Business
+### Probability
+- Bayes' Theorem
+- Simpson's Paradox
 
-### Time of Money
+### Probability Distribution
+- Random Variables
+- Poisson Probability Distribution
+- Binomial Probability
 
-**Simple Interest**  
+### Decision Analysis
+- Decision Tree
+- Risk Profile
 
-```python
- SimpleInterest(value)
- ```  
+### Game Theory
+- Utility
+- Decision Making
+### Time Series Analysis / Forecasting
+- Time Series Patterns
+- Forecast Accuracy
+- Linear Trend Projection
+### Linear Programming
+### Project Scheduling (PERT/CPM)
+- Expected Activity Times
+- Scheduling
+- Time-Cost Trade-Offs
 
-**Bank Discount**  
+### Inventory Models
+- Economic Order Quantity (EOQ)
+- Economic Production Lot Size Model
+- Inventory Model with Planned Shortages
 
-```python
- BankDiscount(value)
- ```
+### Waiting Line Models
+- Single-Server
+- Multiple-Server
+- Economic Analysis
 
-**Compound Interest**  
+### Simulation
+- Risk Analysis
+- Inventory Simulation
+- Waiting Line Simulation
 
-```python
-CompoundInterest(value)
-```
-
-**Annuities**
-
-```python
-Annuities(value)
-```
-
-### Debt and Leasing
-
-**Credit** & **Loans**
-
-```python
-Credit(value)
-Loans(value)
-```
-
-**Mortgage Debt**
-```python
-Morgage(value)
-```
-**Leasing**
-```python
-```
-
-### Investment
-
-**Stocks**
-
-```python
-Stock(buy/sell)
-CommonStock(value)
-NewCommonStock(value)
-
-```
-**Bonds**
-```python
-
-```
-
-**Mutual Funds**
-```
-```
-
-**Options**
-```
-```
-**Cost of Capital and Ratio Analysis**
-```
-```
-
-### Return and Risk
-**Return and Risk**
-```python
-ERR(value)
-```
-Capital Asset Pricing
-```python
-```
-
-
-### Insurance
-
-**Life Annuaities**
-```python
-MortalityTable(value)
-```
-
-**Life Insurance**
+### Markov Process
+- Market Share Analysis
+- Accounts Receivable Analysis
