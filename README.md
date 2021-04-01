@@ -1,6 +1,6 @@
 # Quantitative Business Analysis
 
-Quantitive approach to decision making is an analysis used for business decisions is based purely on data.
+Quantitative approach to decision-making is an analysis used for business decisions is based purely on data.
 
 ### What Is Quantitative Analysis?
 Quantitative analysis is using data from your business to determine its success. It helps you look at data to determine what needs to be changed in the company or what is working for the company. You can use quantitative analysis to make purchasing decisions, marketing decisions, and even sales decisions.
@@ -15,6 +15,7 @@ You may be wondering, are my marketing efforts effective? How do I figure out if
 
 ---
 ## Quantitative Methods for Business
+
 ### Probability
 - Bayes' Theorem
 - Simpson's Paradox
@@ -31,11 +32,15 @@ You may be wondering, are my marketing efforts effective? How do I figure out if
 ### Game Theory
 - Utility
 - Decision Making
+
 ### Time Series Analysis / Forecasting
 - Time Series Patterns
 - Forecast Accuracy
 - Linear Trend Projection
+
 ### Linear Programming
+- None
+
 ### Project Scheduling (PERT/CPM)
 - Expected Activity Times
 - Scheduling
