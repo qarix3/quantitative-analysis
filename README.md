@@ -1,7 +1,5 @@
 # Quantitative Business Analysis
 
-## Quantitative Analysis for Business Decisions
-
 Quantitive approach to decision making is an analysis used for business decisions is based purely on data.
 
 ### What Is Quantitative Analysis?
