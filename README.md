@@ -16,10 +16,6 @@ You may be wondering, are my marketing efforts effective? How do I figure out if
 ---
 ## Quantitative Methods for Business
 
-### Probability
-- Bayes' Theorem
-- Simpson's Paradox
-
 ### Probability Distribution
 - Random Variables
 - Poisson Probability Distribution
@@ -39,7 +35,10 @@ You may be wondering, are my marketing efforts effective? How do I figure out if
 - Linear Trend Projection
 
 ### Linear Programming
-- None
+- Simple Maximization Problem
+- Simple Minimization Problem
+- Graphical Solution
+- Extreme Points and the Optimal Solution
 
 ### Project Scheduling (PERT/CPM)
 - Expected Activity Times
@@ -47,19 +46,25 @@ You may be wondering, are my marketing efforts effective? How do I figure out if
 - Time-Cost Trade-Offs
 
 ### Inventory Models
-- Economic Order Quantity (EOQ)
+- Economic Order Quantity (EOQ) Model
 - Economic Production Lot Size Model
 - Inventory Model with Planned Shortages
+- Quantity Discounts for the EOQ Model
+- Single Period Inventory Model with Probabilistic Demand
+- Order-Quantity, Reoder Point Model with Probabilistic Demand
+- Period Review Model with Probabilistic Demand
 
 ### Waiting Line Models
 - Single-Server
 - Multiple-Server
 - Economic Analysis
+- Other Waiting Line Models
 
 ### Simulation
 - Risk Analysis
 - Inventory Simulation
 - Waiting Line Simulation
+- Other Simulation Issue 
 
 ### Markov Process
 - Market Share Analysis
