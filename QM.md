@@ -1,4 +1,7 @@
 # Quantitative Methods for Business
+
+Quantitative approach to decision-making is an analysis used for business decisions is based purely on data.
+
 ### Probability Distribution
 - Random Variables
 - Poisson Probability Distribution
