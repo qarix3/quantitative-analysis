@@ -1,13 +1,12 @@
-
-'''
+"""
 This program uses 1 indexed array, meaning that the elements are stored in
 the array starting from position 1 and all the methods which work with arrays
 follow the above convention
-'''
+"""
 import math
 
-class VAM{
-	int cost[10][10], capacity[10], requirement[10], allotment[10][10];
+class VAM():
+int cost[10][10], capacity[10], requirement[10], allotment[10][10];
 	int row_penalty[10], column_penalty[10];
 	int cap_size, req_size;
 	public:
@@ -375,7 +374,7 @@ int main() {
 	cin >> cap;
 	cout << "Enter the number of requirements(1-8) = ";
 	int req;
-	cin >> req;
+	cin >> req
 	VAM obj(cap, req);
 	obj.input();
 	cin.ignore();
