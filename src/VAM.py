@@ -1,15 +1,10 @@
-/*************************************************************************************
-*   This program uses 1 indexed array, meaning that the elements are stored in the   *
-*   array starting from position 1 and all the methods which work with arrays        *
-*   follow the above convention                                                      *
-**************************************************************************************/
 
-
-#include <iostream>
-#include <cstdlib>
-#include <cmath>
-
-using namespace std;
+'''
+This program uses 1 indexed array, meaning that the elements are stored in
+the array starting from position 1 and all the methods which work with arrays
+follow the above convention
+'''
+import math
 
 class VAM{
 	int cost[10][10], capacity[10], requirement[10], allotment[10][10];
