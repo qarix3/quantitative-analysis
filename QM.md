@@ -1,5 +1,7 @@
 # Quantitative Methods for Business
 
+[open in calibre](calibre://show-book/_hex_-43616c696272655f4c696272617279/54)
+
 Quantitative approach to decision-making is an analysis used for business decisions is based purely on data.
 
 ### Probability Distribution
