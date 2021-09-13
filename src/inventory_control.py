@@ -109,7 +109,8 @@ c = 20
 h = 2
 p = 0.8
 
-model = EOQ_Model(demand=d, order=K, cost=c, holding=h, planned_shortage=False, shortage_cost=p)
+model = EOQ_Model(demand=d, order=K, cost=c, holding=h,
+                  planned_shortage=False, shortage_cost=p)
 model.complete_calculations()
 
 # # Planned Shortage Example

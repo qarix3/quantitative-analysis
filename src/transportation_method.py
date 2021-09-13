@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import numpy as np
 from collections import Counter
 
@@ -51,7 +49,8 @@ def transport(supply, demand, costs, init_method="LCM"):
                         row_allowed.append(C[i, j])
                 row_allowed_sorted = sorted(row_allowed)
                 try:
-                    row_diff[i] = abs(row_allowed_sorted[0] - row_allowed_sorted[1])
+                    row_diff[i] = abs(
+                        row_allowed_sorted[0] - row_allowed_sorted[1])
                 except:
                     # only one element in row_allowed_sorted
                     row_diff[i] = np.nan
@@ -62,7 +61,8 @@ def transport(supply, demand, costs, init_method="LCM"):
                         col_allowed.append(C[i, j])
                 col_allowed_sorted = sorted(col_allowed)
                 try:
-                    col_diff[j] = abs(col_allowed_sorted[0] - col_allowed_sorted[1])
+                    col_diff[j] = abs(
+                        col_allowed_sorted[0] - col_allowed_sorted[1])
                 except:
                     # only one element in row_allowed_sorted
                     col_diff[j] = np.nan
@@ -94,19 +94,24 @@ def transport(supply, demand, costs, init_method="LCM"):
                 assert located_type in ["row", "col"]
 
                 if located_type == "row":
-                    row_indices = [(located_index, j) for j in range(m) if allow_fill_X[located_index, j]]
-                    row_values = [C[located_index,j] for j in range(m) if allow_fill_X[located_index, j]]
+                    row_indices = [(located_index, j) for j in range(
+                        m) if allow_fill_X[located_index, j]]
+                    row_values = [C[located_index, j]
+                                  for j in range(m) if allow_fill_X[located_index, j]]
                     xs = sorted(zip(row_indices, row_values), key=lambda (a, b): b)
                 else:
-                    col_indices = [(i, located_index) for i in range(n) if allow_fill_X[i, located_index]]
-                    col_values = [C[i, located_index] for i in range(n) if allow_fill_X[i, located_index]]
+                    col_indices = [(i, located_index) for i in range(
+                        n) if allow_fill_X[i, located_index]]
+                    col_values = [C[i, located_index]
+                                  for i in range(n) if allow_fill_X[i, located_index]]
                     xs = sorted(zip(col_indices, col_values), key=lambda (a, b): b)
 
                 (i, j), _ = xs[0]
 
             # there's the last cell needed to be filled.
             else:
-                xs = [(i, j) for i in range(n) for j in range(m) if allow_fill_X[i, j]]
+                xs = [(i, j) for i in range(n)
+                      for j in range(m) if allow_fill_X[i, j]]
                 (i, j) = xs[0]
 
             #(i, j), _ = xs[0]
@@ -141,18 +146,18 @@ def transport(supply, demand, costs, init_method="LCM"):
             xs = sorted(zip(indices, C.flatten()), key=lambda (a, b): b)
         elif init_method == "NCM":
             # Northwest Corner Method
-            xs = sorted(zip(indices, C.flatten()), key=lambda (a, b): (a[0],a[1]))
+            xs = sorted(zip(indices, C.flatten()), key=lambda (a, b): (a[0], a[1]))
 
         # Iterating C elements in increasing order
         for (i, j), _ in xs:
-            grabbed = min([s[i],d[j]])
+            grabbed = min([s[i], d[j]])
 
             # supply i or demand j has been met
             if grabbed == 0:
                 continue
 
             # X[i,j] is has been filled
-            elif not np.isnan(X[i,j]):
+            elif not np.isnan(X[i, j]):
                 continue
             else:
                 X[i, j] = grabbed
@@ -170,9 +175,9 @@ def transport(supply, demand, costs, init_method="LCM"):
                 d[j] -= grabbed
 
             if d[j] == 0:
-                allow_fill_X[:,j] = False
+                allow_fill_X[:, j] = False
             if s[i] == 0:
-                allow_fill_X[i,:] = False
+                allow_fill_X[i, :] = False
 
     # Finding optimal solution
     while True:
@@ -198,7 +203,7 @@ def transport(supply, demand, costs, init_method="LCM"):
         # Finding S-matrix
         for i in range(n):
             for j in range(m):
-                if np.isnan(X[i,j]):
+                if np.isnan(X[i, j]):
                     S[i, j] = C[i, j] - u[i] - v[j]
 
         # Stop condition
@@ -217,8 +222,8 @@ def transport(supply, demand, costs, init_method="LCM"):
         T = np.zeros((n, m))
 
         # Element with non-nan value are set as 1
-        for i in range(0,n):
-            for j in range(0,m):
+        for i in range(0, n):
+            for j in range(0, m):
                 if not np.isnan(X[i, j]):
                     T[i, j] = 1
 
@@ -229,18 +234,18 @@ def transport(supply, demand, costs, init_method="LCM"):
 
             for x, count in xcount.items():
                 if count <= 1:
-                    T[x,:] = 0
+                    T[x, :] = 0
             for y, count in ycount.items():
-                if count <= 1: 
-                    T[:,y] = 0
+                if count <= 1:
+                    T[:, y] = 0
 
             if all(x > 1 for x in xcount.values()) \
                     and all(y > 1 for y in ycount.values()):
                 break
 
         # Finding cycle chain order
-        dist = lambda (x1, y1), (x2, y2): (abs(x1-x2) + abs(y1-y2)) \
-            if ((x1==x2 or y1==y2) and not (x1==x2 and y1==y2)) else np.inf
+        def dist((x1, y1), (x2, y2)): return (abs(x1-x2) + abs(y1-y2)) \
+            if ((x1 == x2 or y1 == y2) and not (x1 == x2 and y1 == y2)) else np.inf
         fringe = set(tuple(p) for p in np.argwhere(T > 0))
 
         size = len(fringe)
@@ -272,12 +277,12 @@ def transport(supply, demand, costs, init_method="LCM"):
     # for calculation of total cost
     X_final = np.copy(X)
     for i in range(0, n):
-        for j in range(0,m):
+        for j in range(0, m):
             if np.isnan(X_final[i, j]):
                 X_final[i, j] = 0
 
     return X, np.sum(X_final*C), has_degenerated_init_solution,\
-           has_degenerated_mid_solution, has_unique_solution
+        has_degenerated_mid_solution, has_unique_solution
 
 
 if __name__ == '__main__':
@@ -289,10 +294,11 @@ if __name__ == '__main__':
                       [20., 14., 8., 14.]])
 
     routes, z, \
-    has_degenerated_init_solution, \
-    has_degenerated_mid_solution, \
-    has_unique_solution = transport(supply, demand, costs, init_method="VOGEL")
-    #print routes, z, has_degenerated_init_solution, has_degenerated_mid_solution, has_unique_solution
+        has_degenerated_init_solution, \
+        has_degenerated_mid_solution, \
+        has_unique_solution = transport(
+            supply, demand, costs, init_method="VOGEL")
+    # print routes, z, has_degenerated_init_solution, has_degenerated_mid_solution, has_unique_solution
     assert z == 3125
     assert has_degenerated_init_solution, has_degenerated_mid_solution
     assert not has_unique_solution

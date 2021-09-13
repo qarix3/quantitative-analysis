@@ -1,7 +1,7 @@
-
 import sys
-import numpy as np
 from fractions import Fraction
+
+import numpy as np
 
 try:
     import pandas as pd
@@ -153,10 +153,12 @@ what type of problem do you want to solve?
     if prob_type == 1:
         for i in const_names:
             try:
-                val = float(Fraction(input("enter the value of %s in Z equation: >" % i)))
+                val = float(
+                    Fraction(input("enter the value of %s in Z equation: >" % i)))
             except ValueError:
                 print("please enter a number")
-                val = float(Fraction(input("enter the value of %s in Z equation: >" % i)))
+                val = float(
+                    Fraction(input("enter the value of %s in Z equation: >" % i)))
             z_equation.append(0 - int(val))
         z_equation.append(0)
 
@@ -166,10 +168,12 @@ what type of problem do you want to solve?
         for prod in product_names:
             for const in const_names:
                 try:
-                    val = float(Fraction(input("enter the value of %s in %s: >" % (const, prod))))
+                    val = float(
+                        Fraction(input("enter the value of %s in %s: >" % (const, prod))))
                 except ValueError:
                     print("please ensure you enter a number")
-                    val = float(Fraction(input("enter the value of %s in %s: >" % (const, prod))))
+                    val = float(
+                        Fraction(input("enter the value of %s in %s: >" % (const, prod))))
                 col_values.append(val)
             equate_prod = float(Fraction(input('equate %s to: >' % prod)))
             col_values.append(equate_prod)
@@ -192,10 +196,12 @@ what type of problem do you want to solve?
     elif prob_type == 2:
         for i in const_names:
             try:
-                val = float(Fraction(input("enter the value of %s in Z equation: >" % i)))
+                val = float(
+                    Fraction(input("enter the value of %s in Z equation: >" % i)))
             except ValueError:
                 print("please enter a number")
-                val = float(Fraction(input("enter the value of %s in Z equation: >" % i)))
+                val = float(
+                    Fraction(input("enter the value of %s in Z equation: >" % i)))
             z_equation.append(val)
         z_equation.append(0)
 
@@ -205,10 +211,12 @@ what type of problem do you want to solve?
         for prod in product_names:
             for const in const_names:
                 try:
-                    val = float(Fraction(input("enter the value of %s in %s: >" % (const, prod))))
+                    val = float(
+                        Fraction(input("enter the value of %s in %s: >" % (const, prod))))
                 except ValueError:
                     print("please ensure you enter a number")
-                    val = float(Fraction(input("enter the value of %s in %s: >" % (const, prod))))
+                    val = float(
+                        Fraction(input("enter the value of %s in %s: >" % (const, prod))))
                 col_values.append(val)
             equate_prod = float(Fraction(input('equate %s to: >' % prod)))
             col_values.append(equate_prod)
@@ -252,7 +260,8 @@ def maximization(final_cols, final_rows):
     min_manager = 1
     print(" 1 TABLEAU")
     try:
-        final_pd = pd.DataFrame(np.array(final_cols), columns=const_names, index=solutions)
+        final_pd = pd.DataFrame(np.array(final_cols),
+                                columns=const_names, index=solutions)
         print(final_pd)
     except:
         print('  ', const_names)
@@ -294,16 +303,19 @@ def maximization(final_cols, final_rows):
             if col is not pivot_col and col is not final_cols[-1]:
                 form = col[index_of_min] / pivot_element
                 final_val = np.array(pivot_col) * form
-                new_col = (np.round((np.array(col) - final_val), decimals)).tolist()
+                new_col = (
+                    np.round((np.array(col) - final_val), decimals)).tolist()
                 final_cols[final_cols.index(col)] = new_col
 
             elif col is pivot_col:
-                new_col = (np.round((np.array(col) / pivot_element), decimals)).tolist()
+                new_col = (
+                    np.round((np.array(col) / pivot_element), decimals)).tolist()
                 final_cols[final_cols.index(col)] = new_col
             else:
                 form = abs(col[index_of_min]) / pivot_element
                 final_val = np.array(pivot_col) * form
-                new_col = (np.round((np.array(col) + final_val), decimals)).tolist()
+                new_col = (
+                    np.round((np.array(col) + final_val), decimals)).tolist()
                 final_cols[final_cols.index(col)] = new_col
         final_rows[:] = []
         re_final_rows = np.array(final_cols).T.tolist()
@@ -321,7 +333,8 @@ def maximization(final_cols, final_rows):
 
         print(" %d TABLEAU" % count)
         try:
-            final_pd = pd.DataFrame(np.array(final_cols), columns=const_names, index=solutions)
+            final_pd = pd.DataFrame(
+                np.array(final_cols), columns=const_names, index=solutions)
             print(final_pd)
         except:
             print("%d TABLEAU" % count)
@@ -369,7 +382,8 @@ def minimization(final_cols, final_rows):
     min_manager = 1
     print("1 TABLEAU")
     try:
-        fibal_pd = pd.DataFrame(np.array(final_cols), columns=const_names, index=solutions)
+        fibal_pd = pd.DataFrame(np.array(final_cols),
+                                columns=const_names, index=solutions)
         print(fibal_pd)
     except:
         print('  ', const_names)
@@ -411,15 +425,18 @@ def minimization(final_cols, final_rows):
             if col is not pivot_col and col is not final_cols[-1]:
                 form = col[index_of_min] / pivot_element
                 final_form = np.array(pivot_col) * form
-                new_col = (np.round((np.array(col) - final_form), decimals)).tolist()
+                new_col = (
+                    np.round((np.array(col) - final_form), decimals)).tolist()
                 final_cols[final_cols.index(col)] = new_col
             elif col is pivot_col:
-                new_col = (np.round((np.array(col) / pivot_element), decimals)).tolist()
+                new_col = (
+                    np.round((np.array(col) / pivot_element), decimals)).tolist()
                 final_cols[final_cols.index(col)] = new_col
             else:
                 form = abs(col[index_of_min]) / pivot_element
                 final_form = np.array(pivot_col) * form
-                new_col = (np.round((np.array(col) + final_form), decimals)).tolist()
+                new_col = (
+                    np.round((np.array(col) + final_form), decimals)).tolist()
                 final_cols[final_cols.index(col)] = new_col
         final_rows[:] = []
         re_final_rows = np.array(final_cols).T.tolist()
@@ -441,7 +458,8 @@ def minimization(final_cols, final_rows):
             const_names.remove(removable)
         print("%d TABLEAU" % count)
         try:
-            fibal_pd = pd.DataFrame(np.array(final_cols), columns=const_names, index=solutions)
+            fibal_pd = pd.DataFrame(
+                np.array(final_cols), columns=const_names, index=solutions)
             print(fibal_pd)
         except:
             print('  ', const_names)
@@ -488,7 +506,8 @@ def minimization(final_cols, final_rows):
 
 
 def stdz_rows2(column_values):
-    final_cols = [column_values[x:x + const_num + 1] for x in range(0, len(column_values), const_num + 1)]
+    final_cols = [column_values[x:x + const_num + 1]
+                  for x in range(0, len(column_values), const_num + 1)]
     sum_z = (0 - np.array(final_cols).sum(axis=0)).tolist()
     for _list in sum_z:
         z2_equation.append(_list)
@@ -514,7 +533,8 @@ def stdz_rows2(column_values):
 
 
 def stdz_rows(column_values):
-    final_cols = [column_values[x:x + const_num + 1] for x in range(0, len(column_values), const_num + 1)]
+    final_cols = [column_values[x:x + const_num + 1]
+                  for x in range(0, len(column_values), const_num + 1)]
     for cols in final_cols:
         while len(cols) < (const_num + prod_nums):
             cols.insert(-1, 0)
